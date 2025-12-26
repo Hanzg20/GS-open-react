@@ -1,6 +1,7 @@
 {
-  "name": "open-pro-next",
-  "version": "0.1.0",
+  "name": "goldsky-technologies",
+  "version": "1.0.0",
+  "description": "GoldSky Technologies - Building the unified technology platform for Smart Factory, Smart Retail, and Community Services",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
