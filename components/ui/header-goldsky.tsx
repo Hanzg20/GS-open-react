@@ -3,20 +3,25 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Platform", href: "/platform" },
-  { name: "Solutions", href: "/solutions" },
-  { name: "Products", href: "/products" },
-  { name: "Industries", href: "/industries" },
-  { name: "Technology", href: "/technology" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function HeaderGoldSky() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t, locale } = useLanguage();
+
+  const navigation = [
+    { name: t.nav.home, href: "/" },
+    { name: t.nav.platform, href: "/platform" },
+    { name: t.nav.solutions, href: "/solutions" },
+    { name: t.nav.products, href: "/products" },
+    { name: t.nav.industries, href: "/industries" },
+    { name: t.nav.technology, href: "/technology" },
+    { name: t.nav.about, href: "/about" },
+    { name: t.nav.contact, href: "/contact" },
+  ];
+
+  const companyName = locale === 'zh' ? '金鸿天' : 'GoldSky';
 
   return (
     <header className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm">
@@ -34,7 +39,7 @@ export default function HeaderGoldSky() {
                 priority
               />
               <span className="text-xl font-bold bg-gradient-to-r from-yellow-600 via-yellow-500 to-orange-500 bg-clip-text text-transparent">
-                GoldSky
+                {companyName}
               </span>
             </Link>
           </div>
@@ -43,7 +48,7 @@ export default function HeaderGoldSky() {
           <div className="hidden lg:flex lg:gap-x-8">
             {navigation.map((item) => (
               <Link
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 className="text-sm font-medium text-gray-700 hover:text-yellow-600 transition-colors"
               >
@@ -52,19 +57,20 @@ export default function HeaderGoldSky() {
             ))}
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons & Language Switcher */}
           <div className="hidden lg:flex lg:items-center lg:gap-x-4">
+            <LanguageSwitcher />
             <Link
               href="/contact?type=demo"
               className="text-sm font-medium text-gray-700 hover:text-yellow-600"
             >
-              Request Demo
+              {locale === 'zh' ? '申请演示' : 'Request Demo'}
             </Link>
             <Link
               href="/contact"
               className="rounded-lg bg-gradient-to-r from-yellow-500 to-orange-500 px-4 py-2 text-sm font-medium text-white hover:from-yellow-600 hover:to-orange-600 transition-all shadow-sm hover:shadow-md"
             >
-              Talk to Us
+              {t.common.contactUs}
             </Link>
           </div>
 
@@ -93,7 +99,7 @@ export default function HeaderGoldSky() {
             <div className="space-y-1 pb-3 pt-2">
               {navigation.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.href}
                   href={item.href}
                   className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
                   onClick={() => setMobileMenuOpen(false)}
@@ -101,20 +107,23 @@ export default function HeaderGoldSky() {
                   {item.name}
                 </Link>
               ))}
-              <div className="border-t border-gray-200 pt-2">
+              <div className="border-t border-gray-200 pt-2 space-y-2">
+                <div className="px-3 py-2">
+                  <LanguageSwitcher />
+                </div>
                 <Link
                   href="/contact?type=demo"
                   className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Request Demo
+                  {locale === 'zh' ? '申请演示' : 'Request Demo'}
                 </Link>
                 <Link
                   href="/contact"
                   className="block px-3 py-2 text-base font-medium text-yellow-600 hover:bg-gray-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Talk to Us
+                  {t.common.contactUs}
                 </Link>
               </div>
             </div>

@@ -2,6 +2,7 @@ import "./css/style.css";
 
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
+import ClientProviders from "@/components/ClientProviders";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -51,9 +52,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${nacelle.variable} bg-white font-inter text-base text-gray-900 antialiased`}
       >
-        <div className="flex min-h-screen flex-col">
-          {children}
-        </div>
+        <ClientProviders>
+          <div className="flex min-h-screen flex-col">
+            {children}
+          </div>
+        </ClientProviders>
       </body>
     </html>
   );
