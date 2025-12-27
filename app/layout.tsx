@@ -40,6 +40,11 @@ const nacelle = localFont({
 export const metadata = {
   title: "GoldSky Technologies - Unified Technology Platform",
   description: "Building the unified technology platform for Smart Factory, Smart Retail, and Community Services.",
+  icons: {
+    icon: '/images/goldsky-logo.png',
+    shortcut: '/images/goldsky-logo.png',
+    apple: '/images/goldsky-logo.png',
+  },
 };
 
 export default function RootLayout({
