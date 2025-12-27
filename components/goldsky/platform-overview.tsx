@@ -1,13 +1,19 @@
+'use client';
+
+import { useLanguage } from "@/i18n/LanguageContext";
+
 export default function PlatformOverview() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Platform Architecture
+            {t.home.platform.title}
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            A unified foundation that powers diverse industry solutions
+            {t.home.platform.subtitle}
           </p>
         </div>
 
@@ -16,19 +22,19 @@ export default function PlatformOverview() {
           {/* Application Layer */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
             <div className="bg-green-100 rounded-lg p-4 text-center border border-green-200">
-              <div className="text-sm font-semibold text-green-800 mb-2">Applications</div>
+              <div className="text-sm font-semibold text-green-800 mb-2">{t.home.platform.applications}</div>
               <div className="text-xs text-green-700">SmartFactory MES</div>
             </div>
             <div className="bg-green-100 rounded-lg p-4 text-center border border-green-200">
-              <div className="text-sm font-semibold text-green-800 mb-2">Applications</div>
+              <div className="text-sm font-semibold text-green-800 mb-2">{t.home.platform.applications}</div>
               <div className="text-xs text-green-700">Device Monitor</div>
             </div>
             <div className="bg-green-100 rounded-lg p-4 text-center border border-green-200">
-              <div className="text-sm font-semibold text-green-800 mb-2">Applications</div>
+              <div className="text-sm font-semibold text-green-800 mb-2">{t.home.platform.applications}</div>
               <div className="text-xs text-green-700">Jinkoo</div>
             </div>
             <div className="bg-green-100 rounded-lg p-4 text-center border border-green-200">
-              <div className="text-sm font-semibold text-green-800 mb-2">Applications</div>
+              <div className="text-sm font-semibold text-green-800 mb-2">{t.home.platform.applications}</div>
               <div className="text-xs text-green-700">JinBean</div>
             </div>
           </div>
@@ -36,16 +42,16 @@ export default function PlatformOverview() {
           {/* Solution Layer */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <div className="bg-yellow-100 rounded-lg p-4 text-center border border-yellow-200">
-              <div className="text-sm font-semibold text-yellow-800 mb-2">Smart Factory</div>
-              <div className="text-xs text-yellow-700">Manufacturing Solutions</div>
+              <div className="text-sm font-semibold text-yellow-800 mb-2">{t.home.platform.smartFactory}</div>
+              <div className="text-xs text-yellow-700">{t.home.platform.manufacturingSolutions}</div>
             </div>
             <div className="bg-yellow-100 rounded-lg p-4 text-center border border-yellow-200">
-              <div className="text-sm font-semibold text-yellow-800 mb-2">Smart Retail</div>
-              <div className="text-xs text-yellow-700">Commerce Solutions</div>
+              <div className="text-sm font-semibold text-yellow-800 mb-2">{t.home.platform.smartRetail}</div>
+              <div className="text-xs text-yellow-700">{t.home.platform.commerceSolutions}</div>
             </div>
             <div className="bg-yellow-100 rounded-lg p-4 text-center border border-yellow-200">
-              <div className="text-sm font-semibold text-yellow-800 mb-2">Smart Community</div>
-              <div className="text-xs text-yellow-700">Service Solutions</div>
+              <div className="text-sm font-semibold text-yellow-800 mb-2">{t.home.platform.smartCommunity}</div>
+              <div className="text-xs text-yellow-700">{t.home.platform.serviceSolutions}</div>
             </div>
           </div>
 

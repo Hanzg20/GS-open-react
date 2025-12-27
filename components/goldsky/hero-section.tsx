@@ -1,6 +1,11 @@
+'use client';
+
 import Link from "next/link";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-yellow-50">
       {/* Decorative Background Patterns */}
@@ -22,26 +27,27 @@ export default function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center rounded-full bg-yellow-100 px-4 py-2 mb-8">
             <span className="text-sm font-medium text-yellow-800">
-              Platform-First • Engineering-Driven • Industry-Focused
+              {t.home.hero.badge}
             </span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-            Building the{" "}
+            {t.home.hero.title1}{" "}
             <span className="text-gradient bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
-              Unified Technology Platform
+              {t.home.hero.title2}
             </span>
             <br />
-            for Smart Industries
+            {t.home.hero.title3}
           </h1>
 
           {/* Subheading */}
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-600 md:text-xl">
-            One platform. Multiple industries. Infinite possibilities.
+            {t.home.hero.description1}
             <br />
-            From Smart Factory to Smart Retail to Community Services —
-            GoldSky Technologies delivers modular, scalable solutions that transform how industries operate.
+            {t.home.hero.description2}
+            <br />
+            {t.home.hero.description3}
           </p>
 
           {/* CTA Buttons */}
@@ -50,7 +56,7 @@ export default function HeroSection() {
               href="/contact"
               className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-yellow-500 to-orange-500 px-8 py-3 text-base font-medium text-white shadow-sm hover:from-yellow-600 hover:to-orange-600 transition-all"
             >
-              Talk to Us
+              {t.home.hero.talkToUs}
               <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -59,27 +65,11 @@ export default function HeroSection() {
               href="/platform"
               className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border-2 border-gray-300 bg-white px-8 py-3 text-base font-medium text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-colors"
             >
-              Explore Platform
+              {t.home.hero.explorePlatform}
               <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gray-900">Multi-Tenant</div>
-              <div className="mt-1 text-sm text-gray-600">Scalable Architecture</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gray-900">Modular</div>
-              <div className="mt-1 text-sm text-gray-600">Flexible Integration</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gray-900">Industry-Ready</div>
-              <div className="mt-1 text-sm text-gray-600">Proven Solutions</div>
-            </div>
           </div>
         </div>
       </div>

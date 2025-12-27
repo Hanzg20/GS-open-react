@@ -1,42 +1,62 @@
-import Link from "next/link";
+'use client';
 
-const solutions = [
-  {
-    title: "Smart Factory",
-    icon: "🏭",
-    description: "Transform manufacturing with real-time monitoring, predictive maintenance, and intelligent production planning.",
-    features: ["MES Integration", "IoT Monitoring", "Quality Control", "Production Analytics"],
-    href: "/solutions/smart-factory",
-    color: "blue",
-  },
-  {
-    title: "Smart Retail",
-    icon: "🏪",
-    description: "Revolutionize retail operations with intelligent inventory, customer insights, and omnichannel experiences.",
-    features: ["Inventory Management", "Customer Analytics", "POS Integration", "Marketing Automation"],
-    href: "/solutions/smart-retail",
-    color: "green",
-  },
-  {
-    title: "Community Services",
-    icon: "🏘️",
-    description: "Build connected communities with integrated service platforms, local commerce, and resident engagement.",
-    features: ["Service Platform", "Local Commerce", "Community Engagement", "Resource Management"],
-    href: "/solutions/community",
-    color: "purple",
-  },
-];
+import Link from "next/link";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function SolutionCards() {
+  const { t } = useLanguage();
+
+  const solutions = [
+    {
+      title: t.home.solutions.factory.title,
+      icon: "🏭",
+      description: t.home.solutions.factory.description,
+      features: [
+        t.home.solutions.factory.feature1,
+        t.home.solutions.factory.feature2,
+        t.home.solutions.factory.feature3,
+        t.home.solutions.factory.feature4,
+      ],
+      href: "/solutions/smart-factory",
+      color: "blue",
+    },
+    {
+      title: t.home.solutions.retail.title,
+      icon: "🏪",
+      description: t.home.solutions.retail.description,
+      features: [
+        t.home.solutions.retail.feature1,
+        t.home.solutions.retail.feature2,
+        t.home.solutions.retail.feature3,
+        t.home.solutions.retail.feature4,
+      ],
+      href: "/solutions/smart-retail",
+      color: "green",
+    },
+    {
+      title: t.home.solutions.community.title,
+      icon: "🏘️",
+      description: t.home.solutions.community.description,
+      features: [
+        t.home.solutions.community.feature1,
+        t.home.solutions.community.feature2,
+        t.home.solutions.community.feature3,
+        t.home.solutions.community.feature4,
+      ],
+      href: "/solutions/community",
+      color: "purple",
+    },
+  ];
+
   return (
     <section className="py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Industry Solutions
+            {t.home.solutions.title}
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Tailored solutions built on our unified platform
+            {t.home.solutions.subtitle}
           </p>
         </div>
 
@@ -63,7 +83,7 @@ export default function SolutionCards() {
                   href={solution.href}
                   className="inline-flex items-center text-sm font-medium text-yellow-600 hover:text-yellow-700"
                 >
-                  Learn more
+                  {t.home.solutions.learnMore}
                   <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

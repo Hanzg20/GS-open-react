@@ -21,7 +21,7 @@ export default function HeaderGoldSky() {
     { name: t.nav.contact, href: "/contact" },
   ];
 
-  const companyName = locale === 'zh' ? '金鸿天' : 'GoldSky';
+  const companyName = locale === 'zh' ? '金宏天' : 'GoldSky';
 
   return (
     <header className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm">

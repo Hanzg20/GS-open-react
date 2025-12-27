@@ -33,7 +33,7 @@ export default function FooterGoldSky() {
     ],
   };
 
-  const companyName = locale === 'zh' ? '金鸿天科技' : 'GoldSky Technologies';
+  const companyName = locale === 'zh' ? '金宏天科技' : 'GoldSky Technologies';
 
   return (
     <footer className="bg-gray-900 text-gray-300">
